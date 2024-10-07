@@ -8,7 +8,6 @@
 #include "util/time.h"
 #include "hardware/AFSK.h"
 #include "hardware/Serial.h"
-#include "protocol/AX25.h"
 #include "protocol/LLP.h"
 #include "protocol/KISS.h"
 

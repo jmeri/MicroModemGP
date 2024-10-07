@@ -12,7 +12,7 @@
 // The GET_BIT macro is used in the interleaver
 // and deinterleaver to access single bits of a
 // byte.
-inline bool GET_BIT(uint8_t byte, int n) { return (byte & (1 << (8-n))) == (1 << (8-n)); }
+static inline bool GET_BIT(uint8_t byte, int n) { return (byte & (1 << (8-n))) == (1 << (8-n)); }
 
 // We need an indicator to tell us whether we
 // should send a parity byte. This happens
@@ -388,7 +388,7 @@ void llp_init(LLPCtx *ctx, LLPAddress *address, FILE *channel, llp_callback_t ho
 // used for correcting errors in the transmission.
 // The error correction algorithm is a standard
 // (12,8) Hamming code.
-inline bool BIT(uint8_t byte, int n) { return ((byte & _BV(n-1))>>(n-1)); }
+static inline bool BIT(uint8_t byte, int n) { return ((byte & _BV(n-1))>>(n-1)); }
 uint8_t llpParityBlock(uint8_t first, uint8_t other) {
     uint8_t parity = 0x00;
 
